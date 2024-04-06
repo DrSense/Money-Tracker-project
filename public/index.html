@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Money Tracker App</title>
+</head>
+<body>
+    <!-- Form for adding expenses or incomes -->
+    <form action="/add" method="POST">
+        <h1>Money Tracker App</h1>
+        <div class="input-section">
+            <!-- Select element for choosing category (Expense or Income) -->
+            <label for="category_select">Category: </label>
+            <select id="category_select" name="category_select">
+                <option class="exp" value="Expense">Expense</option>
+                <option class="inc" value="Income">Income</option>
+            </select>
+            <!-- Input element for entering amount -->
+            <label for="amount_input">Amount:</label>
+            <input type="number" id="amount_input" name="amount_input">
+            <!-- Input element for entering additional information -->
+            <label for="info">Info:</label>
+            <input type="text" id="info" name="info">
+            <!-- Input element for entering date -->
+            <label for="date_input">Date:</label>
+            <input type="date" id="date_input" name="date_input">
+            <!-- Button for submitting the form -->
+            <button id="add_btn">Add</button>
+        </div>
+    </form>
+
+    <div class="expenses-list">
+        <h2>Expenses and Incomes List</h2>
+        <!-- Table for displaying expenses and incomes -->
+        <table>
+            <thead>
+                <tr>
+                    <!-- Column header for category -->
+                    <th>Category</th>
+                    <!-- Column header for amount -->
+                    <th>Amount</th>
+                    <!-- Column header for additional information -->
+                    <th>Info</th>
+                    <!-- Column header for date -->
+                    <th>Date</th>
+                    <!-- Column header for delete button -->
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="expense-table-body">
+
+            </tbody>
+            <tfoot>
+                <!-- Total amount label -->
+                <td>Total:</td>
+                <!-- Total amount value -->
+                <td id="total-amount"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tfoot>
+        </table>
+    </div>
+    <!-- Script for handling form submission and updating the table -->
+    <script src="script.js"></script>
+</body>
+</html>
